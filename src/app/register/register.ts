@@ -1,8 +1,8 @@
+import { AuthService } from './../services/auth';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { UsersService } from '../services/user';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -12,7 +12,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './register.scss',
 })
 export class Register {
-  private _UsersService = inject(UsersService);
+  showPassword: boolean = false;
+
+  private _AuthService = inject(AuthService);
   private _router = inject(Router);
   private _toastr = inject(ToastrService);
 
@@ -24,6 +26,10 @@ export class Register {
     role: new FormControl('Admin', [Validators.required]),
   });
 
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
+
   onSubmit(data: FormGroup) {
     if (this.RegisterForm.invalid) {
     this._toastr.error('Please fill in all required fields correctly', 'Validation Error',)
@@ -33,12 +39,12 @@ export class Register {
   }
 
   addUser(form: FormGroup) {
-    this._UsersService.createUser(form.value).subscribe({
+    this. _AuthService.onRegister(form.value).subscribe({
       next: (response) => {
         console.log(response);
         this.RegisterForm.reset();
         setTimeout(() => {
-          this._router.navigate(['/login']);
+          this._router.navigate(['../login']);
         }, 5000);
       },
       error: (error) => {

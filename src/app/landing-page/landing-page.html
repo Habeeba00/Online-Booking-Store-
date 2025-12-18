@@ -1,0 +1,282 @@
+<!-- Landing Page -->
+
+<section class="hero-section">
+  <div class="container-fluid">
+
+    <div class="nav-arrows">
+      <button class="arrow-btn prev">←</button>
+      <button class="arrow-btn next">→</button>
+    </div>
+
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide>
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Ipsum Dolor Si</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum
+              enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.
+            </p>
+            <button class="read-more-btn">READ MORE →</button>
+          </div>
+          <div class="hero-image">
+            <img src="images/Mask Group.png" alt="Book Cover" />
+          </div>
+        </div>
+      </ng-template>
+
+      <ng-template carouselSlide>
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Second Slide Title</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum
+              enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis urna, a eu.
+            </p>
+            <button class="read-more-btn">READ MORE →</button>
+          </div>
+          <div class="hero-image">
+            <img src="images/Mask Group.png" alt="Book Cover 2" />
+          </div>
+        </div>
+      </ng-template>
+
+      <ng-template carouselSlide>
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Ipsum Dolor Si</h1>
+            <p>Slide 3</p>
+            <button class="read-more-btn">READ MORE →</button>
+          </div>
+          <div class="hero-image">
+            <img src="images/Mask Group.png" alt="Book Cover 3" />
+          </div>
+        </div>
+      </ng-template>
+
+      <ng-template carouselSlide>
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Ipsum Dolor Si</h1>
+            <p>Slide 4</p>
+            <button class="read-more-btn">READ MORE →</button>
+          </div>
+          <div class="hero-image">
+            <img src="images/Mask Group.png" alt="Book Cover 4" />
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</section>
+
+<section class="categories-section">
+  <div class="container-fluid">
+    <div class="section-header">
+      <div class="title">
+        <p class="subtitle"><span class="separator"></span>Categories</p>
+        <h2>Explore our Top Categories</h2>
+      </div>
+      <div class="category-arrows">
+        <button class="arrows-btn prev" (click)="categoriesCarousel.prev()">←</button>
+        <button class="arrows-btn next" (click)="categoriesCarousel.next()">→</button>
+      </div>
+    </div>
+
+    <owl-carousel-o [options]="categoriesOptions" #categoriesCarousel>
+      @for (category of categories; track category._id; let i = $index) {
+        <ng-template carouselSlide>
+          <div class="category-item">
+            <div class="category-card">
+              <img [src]="categoryImages[i]" [alt]="category.title" />
+              <h3>{{ category.title }}</h3>
+            </div>
+          </div>
+        </ng-template>
+      }
+    </owl-carousel-o>
+    <div class="view-more-container">
+      <button class="view-more-btn">VIEW MORE →</button>
+    </div>
+  </div>
+</section>
+
+<section class="new-release-section" id="new-release-section">
+  <div class="container-fluid">
+      <div class="section-title">
+        <p class="subtitle">SOME QUALITY ITEMS</p>
+        <h2>New Release Books</h2>
+      </div>
+
+    <owl-carousel-o [options]="booksOptions" #booksCarousel>
+      @for (book of books; track book._id) {
+        <ng-template carouselSlide>
+          <div class="book-card">
+            <div class="book-image-wrapper">
+              <img [src]="book.image" [alt]="book.name" />
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <h3 class="book-title">{{ book.name }}</h3>
+            <p class="book-author">by {{ book.author }}</p>
+            <p class="book-price">$ {{ book.price.toFixed(2) }}</p>
+          </div>
+        </ng-template>
+      }
+    </owl-carousel-o>
+
+    <div class="carousel-footer">
+      <div class="dots-container"></div>
+      <div class="view-all">
+        <a routerLink="../listing-page">View All Products →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-section">
+  <div class="container-fluid">
+    <div class="featured-content" *ngIf="featuredBook">
+      <div class="featured-image">
+        <img [src]="featuredBook.image || 'images/book.png'" [alt]="featuredBook.name" />
+        <button class="nav-arrow left">←</button>
+        <button class="nav-arrow right">→</button>
+      </div>
+
+      <div class="featured-info">
+        <h2>Featured Book</h2>
+        <span class="top-line"></span>
+        <p class="subtitle">BY {{ featuredBook.author || 'UNKNOWN AUTHOR' }}</p>
+        <h3 class="book-name">{{ featuredBook.name }}</h3>
+        <p class="description">
+          {{ featuredBook.description || 'No description available for this book.' }}
+        </p>
+        <p class="price">$ {{ featuredBook.price | number : '1.2-2' }}</p>
+        <button class="view-more-btn" [routerLink]="['../listing-page']">View More →</button>
+      </div>
+    </div>
+
+    <div class="carousel-dots" style="margin-top: 50px">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<section class="deal-banner">
+  <div class="container-fluid">
+    <div class="deal-content">
+      <div class="deal-text">
+        <h2>All books are 50% off now!<br />Don't miss such a deal!</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed<br />eu feugiat amet, libero
+          ipsum enim pharetra hac.
+        </p>
+
+        <div class="countdown">
+          <div class="countdown-item">
+            <span class="countdown-number">768</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number">01</span>
+            <span class="countdown-label">Hour</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number">27</span>
+            <span class="countdown-label">Mint</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number">55</span>
+            <span class="countdown-label">Sec</span>
+          </div>
+        </div>
+
+        <div class="deal-dots">
+          <span class="deal-dot active"></span>
+          <span class="deal-dot"></span>
+          <span class="deal-dot"></span>
+          <span class="deal-dot"></span>
+        </div>
+      </div>
+
+      <div class="deal-image">
+        <img src="images/Unsplash.png" alt="Stack of Books" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <span class="newsletter-dots dot-1"></span>
+  <span class="newsletter-dots dot-2"></span>
+
+  <div class="subscribe-container">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>
+      Sed eu feugiat amet, libero ipsum enim pharetra hac dolor sit amet,<br />consectetur. Elit
+      adipiscing enim pharetra hac.
+    </p>
+
+    <form class="newsletter-form">
+      <i class="bi bi-envelope email-icon"></i>
+      <input type="email" placeholder="youremail123@gmail.com" required />
+      <button type="submit">SUBSCRIBE</button>
+    </form>
+  </div>
+</section>
+
+<section class="articles-section" id="articles-section">
+  <div class="container-fluid">
+    <div class="articles-header">
+      <p class="articles-subtitle">READ OUR ARTICLES</p>
+      <h2>Latest Articles</h2>
+    </div>
+
+    <div class="articles-grid">
+      <div class="article-card">
+        <img src="images/Rectangle 45.png" alt="Reading Books" class="article-image" />
+        <div class="article-content">
+          <p class="article-date">2 Aug, 2021</p>
+          <h3 class="article-title">Reading Books Always Makes The Moments Happy</h3>
+          <div class="article-socials">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <img src="images/Rectangle 38.png" alt="Reading Books" class="article-image" />
+        <div class="article-content">
+          <p class="article-date">2 Aug, 2021</p>
+          <h3 class="article-title">Reading Books Always Makes The Moments Happy</h3>
+          <div class="article-socials">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <img src="images/Rectangle 44.png" alt="Reading Books" class="article-image" />
+        <div class="article-content">
+          <p class="article-date">2 Aug, 2021</p>
+          <h3 class="article-title">Reading Books Always Makes The Moments Happy</h3>
+          <div class="article-socials">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="read-all-btn">
+      <button>READ ALL ARTICLES →</button>
+    </div>
+  </div>
+</section>

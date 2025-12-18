@@ -1,0 +1,60 @@
+<nav>
+  <mat-toolbar class="top-toolbar">
+    <button mat-icon-button aria-label="Phone icon">
+      <i class="bi bi-telephone-fill"></i>
+    </button>
+    <span>+91 8374902234</span>
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button aria-label="Facebook">
+      <i class="bi bi-facebook"></i>
+    </button>
+    <button mat-icon-button aria-label="Instagram">
+      <i class="bi bi-instagram"></i>
+    </button>
+    <button mat-icon-button aria-label="LinkedIn">
+      <i class="bi bi-linkedin"></i>
+    </button>
+    <button mat-icon-button aria-label="Twitter">
+      <i class="bi bi-twitter"></i>
+    </button>
+    <button mat-icon-button aria-label="YouTube">
+      <i class="bi bi-youtube"></i>
+    </button>
+  </mat-toolbar>
+
+  <mat-toolbar class="bottom-toolbar">
+    <div class="logo"></div>
+
+    <div class="nav-links">
+      <a routerLink="../dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">HOME</a>
+      <span class="separator">|</span>
+      <a (click)="scrollToSection('footer')">ABOUT US</a>
+      <span class="separator">|</span>
+      <a routerLink="../listing-page" routerLinkActive="active">BOOKS</a>
+      <span class="separator">|</span>
+      <a (click)="scrollToSection('new-release-section')">NEW RELEASE</a>
+      <span class="separator">|</span>
+      <a (click)="scrollToSection('footer')">CONTACT US</a>
+      <span class="separator">|</span>
+      <a (click)="scrollToSection('articles-section')">BLOG</a>
+    </div>
+
+    <span class="example-spacer"></span>
+
+    <div class="right-icons">
+      <button mat-icon-button aria-label="User profile">
+        <i class="bi bi-person"></i>
+      </button>
+      <span class="separator">|</span>
+      <button mat-icon-button aria-label="Shopping cart">
+        <i class="bi bi-bag"></i>
+      </button>
+      <span class="separator">|</span>
+      <button mat-icon-button aria-label="Favorites">
+        <i class="bi bi-heart"></i>
+      </button>
+    </div>
+  </mat-toolbar>
+
+</nav>

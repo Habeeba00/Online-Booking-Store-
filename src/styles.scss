@@ -1,7 +1,48 @@
-@import '@fontsource/manrope';
-@import 'ngx-toastr/toastr';
+@use '@angular/material' as mat;
+@use 'ngx-toastr/toastr';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Manrope', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+app-login,
+app-register,
+app-forgot-password,
+app-reset-password,
+app-change-password
+{
+  font-family: 'Manrope', sans-serif;
+  * {
+    font-family: 'Manrope', sans-serif;
+  }
+}
+
+app-dashboard,
+app-navbar,
+app-navbar-simple,
+app-landing-page{
+  font-family: 'Inter', sans-serif;
+
+  * {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+app-cart-page,
+app-listing-page
+{
+  font-family: 'Manrope', sans-serif;
+  * {
+    font-family: 'Manrope', sans-serif;
+  }
 }

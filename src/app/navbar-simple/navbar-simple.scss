@@ -1,0 +1,117 @@
+
+nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-toolbar {
+  background-color: #393280 !important;
+  color: white;
+  padding: 0 60px;
+  height: 45px;
+  min-height: 45px;
+}
+
+.bottom-toolbar {
+  background-color: white !important;
+  color: #333;
+  padding: 15px 60px;
+  height: 85px;
+  min-height: 85px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.top-toolbar span {
+  font-size: 14px;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+.top-toolbar button {
+  color: white;
+  width: 36px;
+  height: 36px;
+}
+
+.top-toolbar i {
+  font-size: 16px;
+  color: white;
+}
+
+.top-toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #b8b8b8;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.right-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.right-icons button {
+  color: #333;
+  width: 40px;
+  height: 40px;
+}
+
+.right-icons i {
+  font-size: 22px;
+  color: #333;
+}
+
+.right-icons button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.separator {
+  margin: 0 8px;
+  font-size: 18px;
+  color: #ddd;
+}
+
+.left-icon {
+  width: 35px;
+  height:35px;
+  background-color: #ED553B;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: absolute; /* Add this */
+  left: 60px;
+}
+
+.left-icon i {
+  font-size: 24px;
+  color: white;
+}
+
+.left-icon:hover {
+  background-color: #d94a31;
+}

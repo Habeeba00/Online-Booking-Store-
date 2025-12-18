@@ -1,0 +1,135 @@
+.footer {
+  background: #ED553B;
+  color: white;
+  padding: 60px 20px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer .container {
+  max-width: 1200px;
+  max-height: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.footer .col-md-4 {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  padding: 0 15px;
+}
+.footer .col-md-4:nth-child(2) {
+  padding-left: 80px;
+}
+.logo-wrapper {
+  margin-bottom: 20px;
+}
+
+
+.logo-img {
+  max-width:83px;
+  height: 87px;
+}
+
+.footer-description {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 65px;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 32px;
+  transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: 2%;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2%;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing:2%;
+}
+
+.bottom-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing:2%;
+  transition: opacity 0.3s ease;
+}
+
+.bottom-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+

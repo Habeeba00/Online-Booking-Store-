@@ -1,5 +1,5 @@
 <section class="register-section">
-  <div class="register-container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-6">
         <div class="image-container">
@@ -87,15 +87,21 @@
             }
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
+              <div class="password-wrapper">
               <input
-                type="password"
-                class="form-control"
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control"
                 id="password"
                 [class.is-invalid]="RegisterForm.get('password')?.invalid && RegisterForm.get('password')?.touched"
                 formControlName="password"
                 placeholder="Enter password"
                 required
               />
+              <i
+              class="password-toggle-icon"
+              (click)="togglePassword()"
+            ></i>
+            </div>
             </div>
             @if (RegisterForm.get('password')?.errors && RegisterForm.get('password')?.touched) {
               <div class="alert alert-danger">

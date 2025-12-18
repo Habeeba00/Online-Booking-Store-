@@ -1,21 +1,26 @@
 .register-section {
   min-height: 100vh;
-  background-color: #d9d9d9;
 }
-.register-container {
+
+.container-fluid {
+  width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 25px;
+  padding: 0 !important;
+  margin: 0 !important;
 }
+
+
 .row {
   display: flex;
   width: 100%;
-  height: 100%;
-  margin: 0;
+  height: 100vh;
+  margin: 0 !important;
 }
+
 .col-md-6 {
   width: 50%;
+  padding: 0;
 }
 
 .image-container {
@@ -123,6 +128,8 @@ form > .mb-3:nth-child(2) {
 .btn-login-link:hover {
   border-color: #6251dd;
 }
+
+
 .alert-danger{
   background-color: #f8d7da;
   border-color: #f5c2c7;
@@ -132,4 +139,28 @@ form > .mb-3:nth-child(2) {
 p {
   margin: 0;
   font-size: 0.875rem;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.password-toggle-icon:hover {
+  color: #374151;
+}
+
+.password-wrapper .form-control {
+  padding-right: 40px;
 }

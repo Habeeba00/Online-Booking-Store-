@@ -1,18 +1,24 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
   const toastr = inject(ToastrService);
-  const token =
-  localStorage.getItem('accessToken')|| sessionStorage.getItem('accessToken');
+  const platformId = inject(PLATFORM_ID);
 
-  if (token !== null) {
+  if (!isPlatformBrowser(platformId)) {
     return true;
-  } else {
-    toastr.error('Please sign in first', 'Authentication Required');
-    router.navigate(['/login']);
-    return false;
   }
+  const token = localStorage.getItem('accessToken');
+
+  if (token) {
+    return true;
+  }
+
+  toastr.error('Please sign in first', 'Authentication Required');
+  router.navigate(['auth/login']);
+  return false;
 };

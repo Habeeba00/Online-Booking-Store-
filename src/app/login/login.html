@@ -1,5 +1,5 @@
 <section class="login-section">
-  <div class="login-container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-6">
         <div class="image-container">
@@ -38,10 +38,19 @@
             }
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" placeholder="***********"
+              <div class="password-wrapper">
+              <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control"
+              placeholder="***********"
               formControlName="password"
               [class.is-invalid]="SinginForm.get('password')?.invalid && SinginForm.get('password')?.touched"
               />
+            <i
+            class="password-toggle-icon"
+            (click)="togglePassword()"
+          ></i>
+              </div>
             </div>
             @if (SinginForm.get('password')?.errors && SinginForm.get('password')?.touched) {
               <div class="alert alert-danger">
@@ -53,12 +62,7 @@
                 }
               </div>
             }
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="rememberMe"
-              formControlName="rememberMe"
-              />
-              <label class="form-check-label" for="rememberMe">Remember me</label>
-            </div>
+
             <button type="submit" class="btn btn-login">Login</button>
             <button type="button" class="btn btn-register" routerLink="../register">
               Register

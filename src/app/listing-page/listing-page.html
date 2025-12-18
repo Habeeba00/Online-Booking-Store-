@@ -1,0 +1,119 @@
+<app-navbar-simple></app-navbar-simple>
+
+
+<section class="products-page">
+  <div class="breadcrumb-section">
+    <div class="subtitle-container">
+      <nav>
+        <span>HOME</span>
+        <span class="separator">/</span>
+        <span class="active">PRODUCTS</span>
+      </nav>
+    </div>
+  </div>
+
+  <div class="filter-container">
+    <div class="products-container">
+      <aside class="filters-sidebar">
+        <div class="filter-group">
+          <div class="filter-header">
+            <h5>Price <span class="separator"></span></h5>
+          </div>
+          <div class="filter-body">
+            <div class="price-inputs">
+              <span class="dollar">$</span>
+              <input type="number" />
+              <span>to</span>
+              <span class="dollar">$</span>
+              <input type="number" />
+            </div>
+            <button class="filter-btn">Filter</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-header">
+            <h5>Product type<span><i class="bi bi-plus"></i></span></h5>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-header">
+            <h5>Availability<span><i class="bi bi-plus"></i></span></h5>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-header">
+            <h5>Brand<span><i class="bi bi-plus"></i></span></h5>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-header">
+            <h5>Color<span><i class="bi bi-plus"></i></span></h5>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-header">
+            <h5>Material<span><i class="bi bi-plus"></i></span></h5>
+          </div>
+        </div>
+      </aside>
+
+      <main class="products-main">
+        <div class="products-toolbar">
+          <div class="toolbar-left">
+            <select>
+              <option value="alphabetically">Sort by: Alphabetically, A-Z</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+
+          <div class="toolbar-right">
+            <span class="results-count">Showing 1 - 6 of {{ books.length }} results</span>
+            <select>
+              <option value="12">Show: 12</option>
+              <option value="24">Show: 24</option>
+              <option value="48">Show: 48</option>
+            </select>
+            <div class="view-toggle">
+              <button class="active">
+                <i class="bi bi-grid-3x3-gap"></i>
+              </button>
+              <button>
+                <i class="bi bi-list"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="books-grid">
+          @for (book of books; track book._id) {
+          <div class="book-card">
+            <div class="book-image">
+              <img [src]="book.image" [alt]="book.name" />
+              <button class="add-to-cart">ADD TO CART</button>
+            </div>
+            <div class="book-info">
+              <h5>{{ book.name }}</h5>
+              <p class="author">{{ book.author }}</p>
+              <p class="price">$ {{ book.price.toFixed(2) }}</p>
+            </div>
+          </div>
+          }
+        </div>
+
+        <div class="pagination">
+          <button class="page-btn" (click)="prev()" [disabled]="!hasPrev">←</button>
+          <button class="page-btn active">{{ page }}</button>
+          <button class="page-btn" (click)="next()" [disabled]="!hasNext">→</button>
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

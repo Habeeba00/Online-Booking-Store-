@@ -1,0 +1,172 @@
+
+<app-navbar-simple></app-navbar-simple>
+
+<section class="cart-section">
+  <div class="row">
+
+    <div class="breadcrumb-section">
+      <div class="subtitle-container">
+        <nav>
+          <span>HOME</span>
+          <span class="separator">/</span>
+          <span class="active">Cart</span>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="">
+        <div class="products-section">
+          <h2 class="section-title">Products Detailes</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Num</th>
+                <th>Book</th>
+                <th>Amount</th>
+                <th>Cost</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cart-items">
+              <tr>
+                <td>01.</td>
+                <td>
+                  <div class="book-cell">
+                    <div class="book-cover">MY<br />BOOK<br />COVER</div>
+                    <span>My Book Cover</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="amount-control">
+                    <button class="amount-btn">-</button>
+                    <span class="amount-value">1</span>
+                    <button class="amount-btn">+</button>
+                  </div>
+                </td>
+                <td>36 AED</td>
+                <td class="subtotal">36 AED</td>
+                <td>
+                  <button class="remove-btn">
+                    <i class="bi bi-x"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>02.</td>
+                <td>
+                  <div class="book-cell">
+                    <div class="book-cover">MY<br />BOOK<br />COVER</div>
+                    <span>My Book Cover</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="amount-control">
+                    <button class="amount-btn">-</button>
+                    <span class="amount-value">1</span>
+                    <button class="amount-btn">+</button>
+                  </div>
+                </td>
+                <td>36 AED</td>
+                <td class="subtotal">36 AED</td>
+                <td>
+                  <button class="remove-btn">
+                    <i class="bi bi-x"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>03.</td>
+                <td>
+                  <div class="book-cell">
+                    <div class="book-cover">MY<br />BOOK<br />COVER</div>
+                    <span>My Book Cover</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="amount-control">
+                    <button class="amount-btn">-</button>
+                    <span class="amount-value">1</span>
+                    <button class="amount-btn">+</button>
+                  </div>
+                </td>
+                <td>36 AED</td>
+                <td class="subtotal">36 AED</td>
+                <td>
+                  <button class="remove-btn">
+                    <i class="bi bi-x"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="cart-container">
+        <div class="cart-summary">
+          <h2 class="section-title">Cart Total Cost</h2>
+          <div class="summary-row">
+            <span>Total</span>
+            <span class="total">108 AED</span>
+          </div>
+          <div class="summary-row">
+            <span>Tax</span>
+            <span class="tax">4.8 AED</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total Cost</span>
+            <span class="amount" id="total-cost">112.8 AED</span>
+          </div>
+        </div>
+        <div class="Proceed-button">
+          <button class="proceed-btn">
+            Proceed
+            <i class="bi bi-cart-check"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="shipping-section">
+        <h2 class="section-title">Shipping Data</h2>
+        <form id="shipping-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="userName">User Name</label>
+              <input type="text" id="userName" name="userName" placeholder="john" />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="john@mail.com" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input type="text" id="country" name="country" placeholder="egypt" />
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" placeholder="maddi" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="address">Adress</label>
+              <input type="text" id="address" name="address" placeholder="211 street" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="01176636525" />
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>
