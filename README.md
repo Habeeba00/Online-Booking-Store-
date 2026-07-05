@@ -1,59 +1,195 @@
-# OnlineBookingStore
+# 📚 Online Booking Store
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.12.
+A modern and responsive **Angular 20** web application for browsing, booking, and managing books through an intuitive online platform. The application delivers a seamless user experience with secure authentication, protected routes, shopping cart functionality, and user account management.
 
-## Development server
+---
 
-To start a local development server, run:
+# 📌 Overview
+
+Online Booking Store is a single-page application built with **Angular 20** that demonstrates modern frontend development practices, including standalone components, route guards, HTTP interceptors, authentication, and responsive UI design.
+
+---
+
+# ✨ Features
+
+### 📖 Book Management
+
+* Browse available books.
+* View detailed book information.
+* Responsive product listing interface.
+
+### 🛒 Shopping Cart
+
+* Add and remove books from the cart.
+* Review selected items before checkout.
+
+### 🔐 Authentication
+
+* User registration.
+* Secure login.
+* Forgot password.
+* Change password.
+* Protected routes using authentication guards.
+
+### 👤 User Dashboard
+
+* User profile management.
+* Personalized dashboard experience.
+
+### 🎨 User Experience
+
+* Responsive design for desktop and mobile devices.
+* Clean and modern interface.
+* Smooth navigation between pages.
+
+---
+
+# 🛠️ Tech Stack
+
+* Angular 20
+* TypeScript
+* HTML5
+* SCSS
+* Bootstrap
+* Angular Router
+* HttpClient
+* Route Guards
+* HTTP Interceptors
+* REST API
+* RxJS
+
+---
+
+# 📂 Project Structure
+
+```text
+src/
+├── app/
+│   ├── landing-page/
+│   ├── listing-page/
+│   ├── cart-page/
+│   ├── dashboard/
+│   ├── login/
+│   ├── register/
+│   ├── forget-password/
+│   ├── change-password/
+│   ├── guards/
+│   ├── services/
+│   ├── shared/
+│   └── global-interceptor.ts
+├── assets/
+└── environments/
+```
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+* Node.js
+* Angular CLI
+
+Install Angular CLI:
+
+```bash
+npm install -g @angular/cli
+```
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Habeeba00/online-booking-store.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd online-booking-store
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the application:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+# 🔒 Security Features
 
-## Building
+* Route Guards
+* Authentication Interceptor
+* Protected Pages
+* Session Management
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+# 📸 Screenshots
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Include screenshots of:
 
-## Running unit tests
+* Landing Page
+* Book Listing
+* Book Details
+* Shopping Cart
+* Login
+* Register
+* Dashboard
+* Mobile View
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+# 📚 What I Learned
 
-## Running end-to-end tests
+* Angular Standalone Components
+* Angular Routing
+* Route Guards
+* HTTP Interceptors
+* Authentication Flow
+* REST API Integration
+* Component-Based Architecture
+* Responsive UI Development
+* State Management
+* SCSS Styling
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+# 🔮 Future Improvements
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+* Wishlist
+* Book Search
+* Advanced Filtering
+* Online Payments
+* Order History
+* Reviews & Ratings
+* Admin Dashboard
+* Email Notifications
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# 👩‍💻 Author
+
+**Habeeba Mohamed**
+
+* GitHub: https://github.com/Habeeba00
+* LinkedIn: www.linkedin.com/in/habiba-mohamed-mahmoud
+
+
+---
+
+# 📄 License
+
+This project was developed for educational and portfolio purposes.
